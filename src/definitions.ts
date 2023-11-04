@@ -86,6 +86,16 @@ export interface SpeechRecognitionPlugin {
     eventName: "partialResults",
     listenerFunc: (data: { matches: string[] }) => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
+   /**
+    * Called when finish result.
+    *
+    * Provides end of speech.
+    *
+    * @since 5.0.1
+    */
+   addListener(eventName: "endSpeech", listenerFunc: (data: {
+     end: boolean;
+   }) => void): Promise<PluginListenerHandle> & PluginListenerHandle;
   /**
    * Remove all the listeners that are attached to this plugin.
    *

@@ -314,8 +314,11 @@ public class SpeechRecognition extends Plugin implements Constants {
     public void onBufferReceived(byte[] buffer) {}
 
     @Override
-    public void onEndOfSpeech() {}
-
+    public void onEndOfSpeech() {
+      JSObject ret = new JSObject();
+      ret.put("end", true);
+      notifyListeners("endSpeech", ret);
+    }
     @Override
     public void onError(int error) {
       SpeechRecognition.this.stopListening();
