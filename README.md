@@ -55,6 +55,7 @@ No further action required.
 - [`checkPermissions()`](#checkpermissions)
 - [`requestPermissions()`](#requestpermissions)
 - [`addListener('partialResults', ...)`](#addlistenerpartialresults)
+- [`addListener('endSpeech', ...)`](#addlistenerendspeech)
 - [`removeAllListeners()`](#removealllisteners)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
@@ -224,6 +225,27 @@ Provides partial result.
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 2.0.2
+
+---
+
+### addListener('endSpeech', ...)
+
+```typescript
+addListener(eventName: "endSpeech", listenerFunc: (data: { end: boolean; }) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+```
+
+Called when finish result.
+
+Provides end of speech.
+
+| Param              | Type                                              |
+| ------------------ | ------------------------------------------------- |
+| **`eventName`**    | <code>'endSpeech'</code>                          |
+| **`listenerFunc`** | <code>(data: { end: boolean; }) =&gt; void</code> |
+
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+**Since:** 5.0.1
 
 ---
 

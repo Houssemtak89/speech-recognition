@@ -10,7 +10,8 @@
     "docgen": "docgen --api SpeechRecognitionPlugin --output-readme README.md",
     "watch": "tsc --watch",
     "prepublishOnly": "npm run build",
-    "release": "np --no-tests"
+    "release": "np --no-tests",
+    "postinstall": "npm run build"
   },
   "author": "Priyank Patel <priyank.patel@stackspace.ca>",
   "contributors": [
