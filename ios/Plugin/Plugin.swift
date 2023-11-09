@@ -106,6 +106,10 @@ public class SpeechRecognition: CAPPlugin {
                         self.audioEngine?.inputNode.removeTap(onBus: 0)
                         self.recognitionTask = nil
                         self.recognitionRequest = nil
+                        // Création du dictionnaire pour la notification
+                        let eventData = ["end": true]
+                        // Envoi de la notification aux écouteurs JavaScript
+                        self.notifyListeners("endSpeech", data: eventData)
                     }
                 }
 
